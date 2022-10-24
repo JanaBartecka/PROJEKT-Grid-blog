@@ -66,3 +66,206 @@ blockquote {
 	- https://www.smashingmagazine.com/2017/04/start-using-css-custom-properties/
 */
 
+h1, h2 {
+	color: var(--zelena);
+}
+
+h1 {
+	font-size: 72px;
+	padding-bottom: 36px;
+}
+
+h2 {
+	margin: 0;
+	padding: 20px 0 15px 0;
+	font-size: 36px;
+}
+
+.meta {
+	color: var(--seda);
+	font-size: 14px;
+}
+
+.blog {
+	display: grid;
+	grid-template-columns: 1fr 4fr 2fr;
+	column-gap: 40px;
+}
+
+p ,
+header,
+h2,
+footer {
+	grid-column:2/3;
+}
+
+p {
+	margin: 0 0 25px 0;
+}
+
+
+figure {
+	grid-column: 1/-1;
+	padding-bottom: 40px auto 40px auto ;
+	margin:20px 0 60px 0 ;
+}
+
+figure img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.tip-vlevo {
+	grid-column: 1/2;
+	/* grid-row: 3/4; */
+	border-right: 4px solid var(--zluta);
+	text-align: right;
+	align-self: flex-start;
+}
+
+.tip-vpravo {
+	grid-column: -1/-2;
+	/* grid-row: 7/8; */
+	border-left: 4px solid var(--zluta);
+	text-align: left;
+	align-self: flex-start;
+}
+
+.tip img {
+	width: calc(100% - 20px);
+	/* height: calc(100% - 20px); */
+	/* object-fit: cover; */
+}
+
+.tip {
+	background-color: var(--svetla);	
+	padding: 10px;	
+	margin: 0;
+}
+
+.tip a {
+	color: var(--cervena);
+}
+
+figcaption {
+	color: var(--seda);
+	font-size: 14px;
+}
+
+blockquote::before {
+	background-color: var(--limetka);
+	left: 50%;
+	content: '';
+	display: block;
+	height: 3px;
+	top: 0;
+	position: absolute;
+	transform: translate(-50%,0);
+    width: 100px;
+
+}
+
+blockquote {
+	grid-column: 1/-1;
+	padding: 10px;
+	text-align: center;
+	font-size: 36px;
+	color: var(--seda);
+	position: relative;
+}
+
+blockquote::after {
+	background-color: var(--limetka);
+	left: 50%;
+	content: '';
+	display: block;
+	height: 3px;
+	bottom: 0;
+	position: absolute;
+	transform: translate(-50%,0);
+    width: 100px;
+
+}
+
+footer,
+footer a {
+	color: var(--seda);
+	font-size: 16px;
+}
+
+@media screen and (max-width:1000px) {
+	.blog {
+		column-gap: 1px;
+		grid-template-columns: 2fr 4fr 2fr;
+	}
+
+	p ,
+	header,
+	h2,
+	footer {
+		grid-column:1/-1;
+	}
+
+	.potipuvlevo {
+		grid-column:2/-1;
+		padding-left: 20px;
+	}
+
+	.potipuvpravo {
+		grid-column:1/-2;
+		padding-right: 20px;
+	}
+
+}
+
+@media screen and (max-width:600px) {
+
+	.potipuvlevo,
+	.potipuvpravo {
+		grid-column:1/-1;
+		padding-left: 0;
+	}
+
+	.tip {
+		border-top: 2px solid var(--zluta);
+		border-bottom: 2px solid var(--zluta);
+		border-right: 0;
+		border-left: 0;
+		grid-column: 1/-1;
+		text-align: center;
+		margin-bottom: 30px;
+	}
+
+	.tip p {
+		margin: 0;
+	}
+
+	.tip img {
+		width: 50%;
+		height: 50%;
+		object-fit: cover;
+		vertical-align: bottom;
+	}
+
+	.tipsobrazkem {
+		display: flex;
+		margin-bottom: 20px;
+		align-items: flex-start;
+		align-content: center;
+		gap: 10px;
+	}
+
+	.text {
+		align-self: center;
+		text-align: left;
+		align-self: center;
+	}
+
+	.text,
+	.obrazek {
+		flex: 0 0 50%;
+	}
+
+}
+
